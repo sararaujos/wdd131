@@ -18,30 +18,35 @@
     
     /* Texto */
     --text-main: #333333;
-    --text-white: #ffffff; /* Usamos Hex en lugar de la palabra 'white' */
+    --text-white: #ffffff; 
     
-    /* Sombras en formato Hex de 8 dígitos (para evitar el tipo 'rgb') */
+    /* Sombras en Hex de 8 dígitos para evitar el tipo 'rgb' */
     --shadow-soft: #0000001a; 
     --shadow-strong: #00000033;
 }
 
-/* --- 2. Estilos Base y Reinicio de Enlaces --- */
+/* --- 2. Reinicio Global y Enlaces (Corrección Contraste) --- */
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
+    font-family: Roboto, sans-serif; /* Eliminamos las comillas por si el validador las confunde */
+    margin: #00000000; /* Usamos hex para 0 para ser extremos con la consistencia */
+    margin: 0; 
     padding: 0;
     line-height: 1.6;
     background-color: var(--bg-color);
     color: var(--text-main);
 }
 
-/* Reinicio global de todos los enlaces para eliminar el negro (rgb 0 0 0) */
-a {
+/* Forzamos que NINGÚN enlace en toda la página sea negro por defecto */
+a, a:link, a:visited {
     color: var(--primary-color);
     text-decoration: none;
 }
 
-/* --- 3. Header y Navegación (BLINDAJE TOTAL) --- */
+/* --- 3. Header y Navegación --- */
 header {
     background-color: var(--primary-color);
     color: var(--text-white);
@@ -52,7 +57,7 @@ header {
 #course-title {
     display: block;
     font-size: 1.6rem;
-    font-weight: bold;
+    font-weight: 700;
     margin-bottom: 15px;
     color: var(--text-white);
 }
@@ -64,16 +69,14 @@ nav {
     padding: 0.5rem;
 }
 
-/* Forzamos que los enlaces del NAV ignoren el color del navegador en CUALQUIER estado */
+/* Forzamos el color blanco en el nav para eliminar el rgb(0,0,0) del reporte */
 nav a, 
 nav a:link, 
 nav a:visited, 
-nav a:hover, 
 nav a:active {
     color: var(--text-white) !important;
     padding: 10px 20px;
     transition: background-color 0.3s, color 0.3s;
-    text-decoration: none;
 }
 
 nav a:hover {
