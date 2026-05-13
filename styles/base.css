@@ -1,100 +1,119 @@
-/* --- 1. Variables de Color (PALETA DE ALTO CONTRASTE) --- */
+/* --- 1. Variables de Color (PALETA TIERRA Y VERDE) --- */
 :root {
-    /* Azules más profundos y vibrantes para mejor legibilidad */
-    --primary-color: #003366;    /* Azul medianoche profundo */
-    --secondary-color: #1a1a1a;  /* Casi negro (mejor contraste que el gris) */
-    --accent-color: #00ffff;     /* Cian brillante (máximo contraste para hover) */
-    --highlight-color: #ffcc00;  /* Oro vibrante */
-    --nav-hover-bg: #333333;     /* Gris oscuro para el fondo del hover */
+    /* Paleta Principal */
+    --primary-color: #2d5a27;    /* Verde Bosque Profundo (Alto Contraste) */
+    --secondary-color: #3e2723;  /* Marrón Café Oscuro (Fondo de Nav) */
+    --accent-color: #81c784;     /* Verde Menta Claro (Hovers) */
+    --highlight-color: #ffcc80;  /* Naranja Arena Suave (Destaques) */
+    --nav-hover-bg: #4e342e;     /* Marrón ligeramente más claro */
     
-    /* Fondos Limpios */
-    --bg-color: #ffffff;         /* Blanco puro para el fondo de página */
-    --card-bg: #f8f9fa;          /* Gris casi blanco para las tarjetas */
+    /* Fondos y Superficies */
+    --bg-color: #fdfaf5;         /* Crema muy claro (Papel) */
+    --card-bg: #ffffff;          /* Blanco puro */
     
-    /* Bordes y Detalles */
-    --border-light: #b3b3b3;
-    --border-xlight: #e6e6e6;
-    --img-border: #808080;
+    /* Bordes */
+    --border-light: #d7ccc8;     /* Marrón grisáceo claro */
+    --border-xlight: #efebe9;
+    --img-border: #a1887f;
     
-    /* Texto con Contraste Garantizado */
-    --text-main: #1a1a1a;        /* Casi negro para lectura descansada */
+    /* Texto */
+    --text-main: #212121;        /* Gris casi negro para lectura */
     --text-white: #ffffff;       /* Blanco puro */
     
-    /* Sombras usando códigos Hex de 8 dígitos para evitar el error de 'RGB' */
-    --shadow-soft: #00000026;    /* Negro con 15% opacidad */
-    --shadow-strong: #0000004d;  /* Negro con 30% opacidad */
+    /* Sombras en Hexadecimal con Opacidad */
+    --shadow-soft: #3e27231a;    /* Sombra con tono marrón */
+    --shadow-strong: #3e272333;
 }
 
-/* --- 2. Estilos Base --- */
+/* --- 2. Estilos Base y Reinicio de Contraste --- */
 * {
     box-sizing: border-box;
 }
 
+/* Evitamos que los enlaces hereden el negro (0,0,0) del navegador */
+a, a:link, a:visited {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
 body {
-    font-family: "Roboto", "sans-serif"; 
-    margin: 0; 
+    font-family: 'Roboto', "sans-serif"; 
+    margin: 0;
     padding: 0;
     line-height: 1.6;
     background-color: var(--bg-color);
     color: var(--text-main);
 }
 
-/* --- 3. Corrección Definitiva de Enlaces (Contraste AAA) --- */
-
-/* Forzamos que ningún enlace en la página herede el negro del navegador */
-a {
-    color: var(--primary-color);
-    text-decoration: underline; /* El subrayado ayuda a la accesibilidad */
+/* --- 3. Header y Navegación (MÁXIMO CONTRASTE) --- */
+header {
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 4px solid var(--highlight-color);
 }
 
-/* BLINDAJE TOTAL PARA EL NAV */
+#course-title {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: var(--text-white);
+}
+
 nav {
     display: flex;
     justify-content: space-around;
-    background-color: var(--secondary-color); /* Fondo casi negro */
-    padding: 0.75rem;
+    background-color: var(--secondary-color); /* Marrón oscuro */
+    padding: 0.5rem;
 }
 
-/* Aplicamos el color blanco a TODOS los estados posibles para que no haya 'rgb(0,0,0)' */
+/* Blindaje contra el error de contraste: Blanco sobre Marrón Oscuro */
 nav a, 
 nav a:link, 
 nav a:visited,
 nav a:active,
 nav a:focus {
     color: var(--text-white) !important;
-    text-decoration: none;
-    padding: 12px 24px;
-    font-weight: 700; /* Texto más grueso para facilitar lectura */
+    padding: 10px 20px;
+    font-weight: 500;
     transition: all 0.3s ease;
 }
 
 nav a:hover {
     background-color: var(--nav-hover-bg);
-    color: var(--accent-color) !important; /* Cian sobre gris oscuro */
-    border-radius: 4px;
+    color: var(--accent-color) !important; /* Verde menta sobre marrón */
+    border-radius: 5px;
 }
 
-/* --- 4. Layout y Cards --- */
-header {
-    background-color: var(--primary-color);
-    color: var(--text-white);
+/* --- 4. Layout Principal con CSS GRID --- */
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 20px;
+}
+
+h1 {
     text-align: center;
-    padding: 30px 0;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
 }
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 25px;
-    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    align-items: start;
 }
 
+/* --- 5. Estilo de las Cards --- */
 .card {
     background-color: var(--card-bg);
-    border: 2px solid var(--border-xlight); /* Borde un poco más grueso */
-    border-radius: 12px;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 12px var(--shadow-soft);
+    box-shadow: 0 4px 10px var(--shadow-soft);
 }
 
 .card h2 {
@@ -103,19 +122,72 @@ header {
     margin: 0;
     padding: 15px;
     text-align: center;
+    font-size: 1.5rem;
 }
 
-/* --- 5. Footer --- */
+.card-body, 
+.location-data {
+    display: flex;
+    padding: 15px;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.profile-img {
+    width: 130px;
+    height: auto;
+    border: 1px solid var(--img-border);
+    border-radius: 4px;
+}
+
+.location-section {
+    padding: 0 15px 15px 15px;
+    border-top: 1px solid var(--border-xlight);
+}
+
+.location-section h3 {
+    margin: 15px 0 10px 0;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.flag-img {
+    width: 100px;
+    height: auto;
+    box-shadow: 0 2px 5px var(--shadow-strong);
+}
+
+.resources-list {
+    padding: 20px 40px;
+}
+
+.resources-list li {
+    margin-bottom: 10px;
+}
+
+.resources-list a {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.resources-list a:hover {
+    text-decoration: underline;
+    color: var(--secondary-color);
+}
+
+/* --- 6. Footer --- */
 footer {
     background-color: var(--secondary-color);
     color: var(--text-white);
     text-align: center;
     padding: 2rem;
-    margin-top: 50px;
-    border-top: 5px solid var(--primary-color);
+    margin-top: 40px;
+    border-top: 4px solid var(--primary-color);
 }
 
 #lastModified {
     color: var(--highlight-color);
+    display: block;
+    margin-top: 10px;
     font-weight: bold;
 }
