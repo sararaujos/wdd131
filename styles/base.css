@@ -75,11 +75,10 @@ nav a:link,
 nav a:visited,
 nav a:active,
 nav a:focus {
-    color: var(--secondary-color) !important;
+    color: var(--nav-hover-bg) !important;
     padding: 10px 20px;
     font-weight: 500;
     transition: all 0.3s ease;
-    font-weight: bold;
 }
 
 nav a:hover {
