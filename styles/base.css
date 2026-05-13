@@ -1,4 +1,4 @@
-/* --- 1. Variables de Color (ESTANDARIZACIÓN TOTAL) --- */
+/* --- 1. Variables de Color (ESTÁNDAR HEXADECIMAL ÚNICO) --- */
 :root {
     /* Paleta Principal */
     --primary-color: #1f4e79;
@@ -18,14 +18,14 @@
     
     /* Texto */
     --text-main: #333333;
-    --text-white: #ffffff;
+    --text-white: #ffffff; /* Usamos Hex en lugar de la palabra 'white' */
     
-    /* SOMBRAS (Cambiadas a HEX para evitar la advertencia de RGB/RGBA) */
-    --shadow-color-soft: #0000001a;  /* Esto es negro con 10% opacidad en Hex */
-    --shadow-color-strong: #00000033; /* Esto es negro con 20% opacidad en Hex */
+    /* Sombras en formato Hex de 8 dígitos (para evitar el tipo 'rgb') */
+    --shadow-soft: #0000001a; 
+    --shadow-strong: #00000033;
 }
 
-/* --- 2. Estilos Base --- */
+/* --- 2. Estilos Base y Reinicio de Enlaces --- */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -35,7 +35,13 @@ body {
     color: var(--text-main);
 }
 
-/* --- 3. Header y Navegación (CORRECCIÓN DEFINITIVA) --- */
+/* Reinicio global de todos los enlaces para eliminar el negro (rgb 0 0 0) */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* --- 3. Header y Navegación (BLINDAJE TOTAL) --- */
 header {
     background-color: var(--primary-color);
     color: var(--text-white);
@@ -58,20 +64,16 @@ nav {
     padding: 0.5rem;
 }
 
-/* Eliminamos cualquier posibilidad de que el navegador vea negro en los links */
-nav a {
-    color: var(--text-white) !important;
-    text-decoration: none;
-    padding: 10px 20px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-/* Forzamos estados específicos para Lighthouse */
+/* Forzamos que los enlaces del NAV ignoren el color del navegador en CUALQUIER estado */
+nav a, 
 nav a:link, 
 nav a:visited, 
-nav a:active, 
-nav a:focus {
+nav a:hover, 
+nav a:active {
     color: var(--text-white) !important;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
 }
 
 nav a:hover {
@@ -106,7 +108,7 @@ h1 {
     border: 1px solid var(--border-light);
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 10px var(--shadow-color-soft);
+    box-shadow: 0 4px 10px var(--shadow-soft);
 }
 
 .card h2 {
@@ -147,7 +149,7 @@ h1 {
 .flag-img {
     width: 100px;
     height: auto;
-    box-shadow: 0 2px 5px var(--shadow-color-strong);
+    box-shadow: 0 2px 5px var(--shadow-strong);
 }
 
 .resources-list {
@@ -160,7 +162,6 @@ h1 {
 
 .resources-list a {
     color: var(--primary-color);
-    text-decoration: none;
 }
 
 .resources-list a:hover {
