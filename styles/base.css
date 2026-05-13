@@ -1,90 +1,106 @@
-/* --- 1. Tipografía y Base --- */
+/* --- 1. Variables y Configuración (:root) --- */
+:root {
+    /* Colores principales */
+    --primary-color: #1f4e79;    /* Azul profesional */
+    --secondary-color: #333333;  /* Gris oscuro para nav */
+    --accent-color: #1abc9c;     /* Turquesa para hover */
+    --highlight-color: #f1c40f;  /* Amarillo para fechas */
+    
+    /* Colores de fondo y texto */
+    --bg-color: #f0f0f0;         /* Gris muy claro */
+    --card-bg: #ffffff;          /* Blanco */
+    --text-color-main: #333333;  /* Texto principal */
+    --text-color-light: #ffffff; /* Texto sobre fondos oscuros */
+}
+
+/* --- 2. Estilos Base --- */
 body {
-    font-family: 'Roboto', sans-serif; /* Usando Google Fonts */
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background-color: #f0f0f0; /* Fondo sutil para resaltar las cartas */
-    color: #333;
+    background-color: var(--bg-color);
+    color: var(--text-color-main);
 }
 
-/* --- 2. Header y Navegación --- */
+/* --- 3. Header y Navegación (Corrección de Contraste) --- */
 header {
-    background-color: #1f4e79; /* Esquema de colores profesional */
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--text-color-light); /* Fuerza color blanco */
     text-align: center;
     padding: 20px 0;
 }
 
 #course-title {
-    display: block; /* Requisito: display block para centrar fácilmente */
+    display: block;
     font-size: 1.6rem;
     font-weight: bold;
     margin-bottom: 15px;
-    color: white
+    color: var(--text-color-light); /* Asegura que el span sea blanco */
 }
 
 nav {
-    display: flex; /* Requisito: CSS Flex en el nav */
+    display: flex;
     justify-content: space-around;
-    background-color: #333;
+    background-color: var(--secondary-color);
     padding: 0.5rem;
 }
 
-nav a {
-    color: white;
+/* Selectores específicos para enlaces (evita el color negro por defecto) */
+nav a, 
+nav a:visited {
+    color: var(--text-color-light) !important; /* El !important asegura que Lighthouse no detecte otro color */
     text-decoration: none;
     padding: 10px 20px;
-    transition: background-color 0.3s, color 0.3s; /* Requisito: Hover effect */
+    transition: background-color 0.3s, color 0.3s;
 }
 
 nav a:hover {
-    background-color: #444;
-    color: #1abc9c;
+    background-color: #444444;
+    color: var(--accent-color) !important;
     border-radius: 5px;
 }
 
-/* --- 3. Layout Principal --- */
+/* --- 4. Layout Principal --- */
 main {
-    max-width: 900px; /* Requisito: Ancho limitado */
-    margin: 2rem auto; /* Requisito: Centrado horizontalmente */
+    max-width: 900px;
+    margin: 2rem auto;
     padding: 0 20px;
 }
 
 h1 {
     text-align: center;
     margin-bottom: 1.5rem;
-    color: #1f4e79;
+    color: var(--primary-color);
 }
 
-/* Requisito: Layout de columnas usando CSS Grid */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
-    align-items: start; /* Importante: Evita que las cartas se estiren a lo largo */
+    align-items: start;
 }
 
-/* --- 4. Estilo de las Cards --- */
+/* --- 5. Estilo de las Cards --- */
 .card {
-    background-color: white;
-    border: 1px solid #ccc;
+    background-color: var(--card-bg);
+    border: 1px solid #cccccc;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .card h2 {
-    background-color: #1f4e79;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
     margin: 0;
     padding: 15px;
     text-align: center;
-    font-size: 1.5rem; /* Ajusta el tamaño a tu gusto */
+    font-size: 1.5rem;
 }
 
-/* Flexbox interno para alinear texto y fotos */
-.card-body, .location-data {
+.card-body, 
+.location-data {
     display: flex;
     padding: 15px;
     gap: 20px;
@@ -94,25 +110,25 @@ h1 {
 .profile-img {
     width: 130px;
     height: auto;
-    border: 1px solid #ddd;
+    border: 1px solid #dddddd;
     border-radius: 4px;
 }
 
 .location-section {
     padding: 0 15px 15px 15px;
-    border-top: 1px solid #eee; /* Principio de Proximidad: separa secciones */
+    border-top: 1px solid #eeeeee;
 }
 
 .location-section h3 {
     margin: 15px 0 10px 0;
-    color: #1f4e79;
+    color: var(--primary-color);
     font-size: 1.2rem;
 }
 
 .flag-img {
     width: 100px;
     height: auto;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .resources-list {
@@ -124,7 +140,7 @@ h1 {
 }
 
 .resources-list a {
-    color: #1f4e79;
+    color: var(--primary-color);
     text-decoration: none;
 }
 
@@ -132,17 +148,17 @@ h1 {
     text-decoration: underline;
 }
 
-/* --- 5. Footer --- */
+/* --- 6. Footer --- */
 footer {
-    background-color: #1f4e79;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
     text-align: center;
     padding: 2rem;
     margin-top: 40px;
 }
 
 #lastModified {
-    color: #f1c40f; /* Contraste para que sea legible */
+    color: var(--highlight-color);
     display: block;
     margin-top: 10px;
 }
