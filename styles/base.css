@@ -13,8 +13,7 @@
     --border-xlight: #eeeeee;
     --img-border: #dddddd;
     
-    --text-main: #333333;
-    --text-white: #ffffff; 
+    --text-main: #333333; 
     
     --shadow-soft: #0000001a; 
     --shadow-strong: #00000033;
@@ -26,7 +25,7 @@
 }
 
 body {
-    /* Corregido: Eliminada la duplicación de margin y comillas en fuentes */
+    /* Corregido: Quitamos el margen repetido y ponemos comillas a la fuente */
     font-family: "Roboto", "sans-serif"; 
     margin: 0; 
     padding: 0;
@@ -35,13 +34,13 @@ body {
     color: var(--text-main);
 }
 
-/* --- 3. Corrección de Contraste y Colores --- */
+/* --- 3. Corrección de Contraste de Enlaces (ELIMINA EL ERROR 1.66:1) --- */
 
-/* Forzamos que los enlaces del NAV siempre usen la variable blanca */
+/* Forzamos que los enlaces del NAV nunca sean negros (rgb 0 0 0) */
 nav a, 
 nav a:link, 
 nav a:visited {
-    color: var(--text-white) !important;
+    color: var(--card-bg) !important; /* Blanco sobre fondo #333333 = Contraste perfecto */
     text-decoration: none;
     padding: 10px 20px;
     transition: background-color 0.3s, color 0.3s;
@@ -54,16 +53,17 @@ nav a:focus {
     color: var(--accent-color) !important;
 }
 
-/* Enlaces generales fuera del menú */
-a {
+/* Enlaces fuera del nav (como los de las listas de recursos) */
+.resources-list a,
+.resources-list a:link,
+.resources-list a:visited {
     color: var(--primary-color);
-    text-decoration: none;
 }
 
-/* --- 4. Estructura de Página --- */
+/* --- 4. Resto del Layout (Sin cambios, pero limpio) --- */
 header {
     background-color: var(--primary-color);
-    color: var(--text-white);
+    color: var(--card-bg);
     text-align: center;
     padding: 20px 0;
 }
@@ -91,14 +91,8 @@ main {
 
 footer {
     background-color: var(--primary-color);
-    color: var(--text-white);
+    color: var(--card-bg);
     text-align: center;
     padding: 2rem;
     margin-top: 40px;
-}
-
-#lastModified {
-    color: var(--highlight-color);
-    display: block;
-    margin-top: 10px;
 }
