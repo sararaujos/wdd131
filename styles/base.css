@@ -1,71 +1,60 @@
 /* --- 1. Variables de Color (ESTÁNDAR HEXADECIMAL ÚNICO) --- */
 :root {
+    /* Paleta Principal */
     --primary-color: #1f4e79;
     --secondary-color: #333333;
     --accent-color: #1abc9c;
     --highlight-color: #f1c40f;
     --nav-hover-bg: #444444;
     
+    /* Fondos y Superficies */
     --bg-color: #f0f0f0;
     --card-bg: #ffffff;
     
+    /* Bordes */
     --border-light: #cccccc;
     --border-xlight: #eeeeee;
     --img-border: #dddddd;
     
-    --text-main: #333333; 
+    /* Texto */
+    --text-main: #333333;
+    --text-white: #ffffff; /* Usamos Hex en lugar de la palabra 'white' */
     
+    /* Sombras en formato Hex de 8 dígitos (para evitar el tipo 'rgb') */
     --shadow-soft: #0000001a; 
     --shadow-strong: #00000033;
 }
 
-/* --- 2. Estilos Base --- */
-* {
-    box-sizing: border-box;
-}
-
+/* --- 2. Estilos Base y Reinicio de Enlaces --- */
 body {
-    /* Corregido: Quitamos el margen repetido y ponemos comillas a la fuente */
-    font-family: "Roboto", "sans-serif"; 
-    margin: 0; 
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
     padding: 0;
     line-height: 1.6;
     background-color: var(--bg-color);
     color: var(--text-main);
 }
 
-/* --- 3. Corrección de Contraste de Enlaces (ELIMINA EL ERROR 1.66:1) --- */
-
-/* Forzamos que los enlaces del NAV nunca sean negros (rgb 0 0 0) */
-nav a, 
-nav a:link, 
-nav a:visited {
-    color: var(--card-bg) !important; /* Blanco sobre fondo #333333 = Contraste perfecto */
-    text-decoration: none;
-    padding: 10px 20px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-nav a:hover, 
-nav a:active,
-nav a:focus {
-    background-color: var(--nav-hover-bg);
-    color: var(--accent-color) !important;
-}
-
-/* Enlaces fuera del nav (como los de las listas de recursos) */
-.resources-list a,
-.resources-list a:link,
-.resources-list a:visited {
+/* Reinicio global de todos los enlaces para eliminar el negro (rgb 0 0 0) */
+a {
     color: var(--primary-color);
+    text-decoration: none;
 }
 
-/* --- 4. Resto del Layout (Sin cambios, pero limpio) --- */
+/* --- 3. Header y Navegación (BLINDAJE TOTAL) --- */
 header {
     background-color: var(--primary-color);
-    color: var(--card-bg);
+    color: var(--text-white);
     text-align: center;
     padding: 20px 0;
+}
+
+#course-title {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: var(--text-white);
 }
 
 nav {
@@ -75,12 +64,45 @@ nav {
     padding: 0.5rem;
 }
 
+/* Forzamos que los enlaces del NAV ignoren el color del navegador en CUALQUIER estado */
+nav a, 
+nav a:link, 
+nav a:visited, 
+nav a:hover, 
+nav a:active {
+    color: var(--text-white) !important;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: var(--nav-hover-bg);
+    color: var(--accent-color) !important;
+    border-radius: 5px;
+}
+
+/* --- 4. Layout Principal --- */
 main {
     max-width: 900px;
     margin: 2rem auto;
     padding: 0 20px;
 }
 
+h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    align-items: start;
+}
+
+/* --- 5. Estilo de las Cards --- */
 .card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-light);
@@ -89,10 +111,74 @@ main {
     box-shadow: 0 4px 10px var(--shadow-soft);
 }
 
+.card h2 {
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    margin: 0;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.card-body, 
+.location-data {
+    display: flex;
+    padding: 15px;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.profile-img {
+    width: 130px;
+    height: auto;
+    border: 1px solid var(--img-border);
+    border-radius: 4px;
+}
+
+.location-section {
+    padding: 0 15px 15px 15px;
+    border-top: 1px solid var(--border-xlight);
+}
+
+.location-section h3 {
+    margin: 15px 0 10px 0;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.flag-img {
+    width: 100px;
+    height: auto;
+    box-shadow: 0 2px 5px var(--shadow-strong);
+}
+
+.resources-list {
+    padding: 20px 40px;
+}
+
+.resources-list li {
+    margin-bottom: 10px;
+}
+
+.resources-list a {
+    color: var(--primary-color);
+}
+
+.resources-list a:hover {
+    text-decoration: underline;
+}
+
+/* --- 6. Footer --- */
 footer {
     background-color: var(--primary-color);
-    color: var(--card-bg);
+    color: var(--text-white);
     text-align: center;
     padding: 2rem;
     margin-top: 40px;
+}
+
+#lastModified {
+    color: var(--highlight-color);
+    display: block;
+    margin-top: 10px;
 }
