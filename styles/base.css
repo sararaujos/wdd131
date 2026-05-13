@@ -73,12 +73,13 @@ h1 {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.card h3 {
+.card h2 {
     background-color: #1f4e79;
     color: white;
     margin: 0;
     padding: 15px;
     text-align: center;
+    font-size: 1.5rem; /* Ajusta el tamaño a tu gusto */
 }
 
 /* Flexbox interno para alinear texto y fotos */
@@ -101,9 +102,10 @@ h1 {
     border-top: 1px solid #eee; /* Principio de Proximidad: separa secciones */
 }
 
-.location-section h4 {
+.location-section h3 {
     margin: 15px 0 10px 0;
     color: #1f4e79;
+    font-size: 1.2rem;
 }
 
 .flag-img {
