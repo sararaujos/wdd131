@@ -18,14 +18,14 @@
     
     /* Texto */
     --text-main: #333333;
-    --text-white: #ffffff; /* Usamos Hex en lugar de la palabra 'white' */
+    --text-white: #ffffff; /* Nunca uses la palabra 'white' */
     
-    /* Sombras en formato Hex de 8 dígitos (para evitar el tipo 'rgb') */
+    /* Sombras en formato Hex con Opacidad (8 dígitos) */
     --shadow-soft: #0000001a; 
     --shadow-strong: #00000033;
 }
 
-/* --- 2. Estilos Base y Reinicio de Enlaces --- */
+/* --- 2. Estilos Base --- */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -35,13 +35,7 @@ body {
     color: var(--text-main);
 }
 
-/* Reinicio global de todos los enlaces para eliminar el negro (rgb 0 0 0) */
-a {
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-/* --- 3. Header y Navegación (BLINDAJE TOTAL) --- */
+/* --- 3. Header y Navegación (ELIMINACIÓN DE CONTRASTE BAJO) --- */
 header {
     background-color: var(--primary-color);
     color: var(--text-white);
@@ -64,16 +58,18 @@ nav {
     padding: 0.5rem;
 }
 
-/* Forzamos que los enlaces del NAV ignoren el color del navegador en CUALQUIER estado */
+/* Forzar color en todas las anclas para que Lighthouse no detecte el negro inicial */
+a {
+    color: var(--primary-color);
+}
+
 nav a, 
 nav a:link, 
-nav a:visited, 
-nav a:hover, 
-nav a:active {
+nav a:visited {
     color: var(--text-white) !important;
+    text-decoration: none;
     padding: 10px 20px;
     transition: background-color 0.3s, color 0.3s;
-    text-decoration: none;
 }
 
 nav a:hover {
@@ -162,6 +158,7 @@ h1 {
 
 .resources-list a {
     color: var(--primary-color);
+    text-decoration: none;
 }
 
 .resources-list a:hover {
