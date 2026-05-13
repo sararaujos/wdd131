@@ -65,7 +65,7 @@ header {
 nav {
     display: flex;
     justify-content: space-around;
-    background-color: var(--secondary-color); /* Marrón oscuro */
+    background-color: var(--accent-color); /* Marrón oscuro */
     padding: 0.5rem;
 }
 
