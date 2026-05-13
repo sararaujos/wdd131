@@ -1,4 +1,4 @@
-/* --- 1. Variables de Color (Estandarización Total) --- */
+/* --- 1. Variables de Color (ESTANDARIZACIÓN TOTAL) --- */
 :root {
     /* Paleta Principal */
     --primary-color: #1f4e79;
@@ -11,18 +11,18 @@
     --bg-color: #f0f0f0;
     --card-bg: #ffffff;
     
-    /* Bordes y Detalles */
+    /* Bordes */
     --border-light: #cccccc;
     --border-xlight: #eeeeee;
-    --img-border: #dddddd; 
+    --img-border: #dddddd;
     
     /* Texto */
     --text-main: #333333;
     --text-white: #ffffff;
     
-    /* Sombras */
-    --shadow-soft: rgba(0, 0, 0, 0.1);
-    --shadow-strong: rgba(0, 0, 0, 0.2);
+    /* SOMBRAS (Cambiadas a HEX para evitar la advertencia de RGB/RGBA) */
+    --shadow-color-soft: #0000001a;  /* Esto es negro con 10% opacidad en Hex */
+    --shadow-color-strong: #00000033; /* Esto es negro con 20% opacidad en Hex */
 }
 
 /* --- 2. Estilos Base --- */
@@ -35,7 +35,7 @@ body {
     color: var(--text-main);
 }
 
-/* --- 3. Header y Navegación --- */
+/* --- 3. Header y Navegación (CORRECCIÓN DEFINITIVA) --- */
 header {
     background-color: var(--primary-color);
     color: var(--text-white);
@@ -58,14 +58,20 @@ nav {
     padding: 0.5rem;
 }
 
-nav a, 
-nav a:link, 
-nav a:visited, 
-nav a:active {
+/* Eliminamos cualquier posibilidad de que el navegador vea negro en los links */
+nav a {
     color: var(--text-white) !important;
     text-decoration: none;
     padding: 10px 20px;
     transition: background-color 0.3s, color 0.3s;
+}
+
+/* Forzamos estados específicos para Lighthouse */
+nav a:link, 
+nav a:visited, 
+nav a:active, 
+nav a:focus {
+    color: var(--text-white) !important;
 }
 
 nav a:hover {
@@ -100,7 +106,7 @@ h1 {
     border: 1px solid var(--border-light);
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 10px var(--shadow-soft);
+    box-shadow: 0 4px 10px var(--shadow-color-soft);
 }
 
 .card h2 {
@@ -123,7 +129,7 @@ h1 {
 .profile-img {
     width: 130px;
     height: auto;
-    border: 1px solid var(--img-border); /* Uso de variable */
+    border: 1px solid var(--img-border);
     border-radius: 4px;
 }
 
@@ -141,7 +147,7 @@ h1 {
 .flag-img {
     width: 100px;
     height: auto;
-    box-shadow: 0 2px 5px var(--shadow-strong);
+    box-shadow: 0 2px 5px var(--shadow-color-strong);
 }
 
 .resources-list {
