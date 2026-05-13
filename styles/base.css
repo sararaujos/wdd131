@@ -1,16 +1,28 @@
-/* --- 1. Variables y Configuración (:root) --- */
+/* --- 1. Variables de Color (Estandarización Total) --- */
 :root {
-    /* Colores principales */
-    --primary-color: #1f4e79;    /* Azul profesional */
-    --secondary-color: #333333;  /* Gris oscuro para nav */
-    --accent-color: #1abc9c;     /* Turquesa para hover */
-    --highlight-color: #f1c40f;  /* Amarillo para fechas */
+    /* Paleta Principal */
+    --primary-color: #1f4e79;
+    --secondary-color: #333333;
+    --accent-color: #1abc9c;
+    --highlight-color: #f1c40f;
+    --nav-hover-bg: #444444;
     
-    /* Colores de fondo y texto */
-    --bg-color: #f0f0f0;         /* Gris muy claro */
-    --card-bg: #ffffff;          /* Blanco */
-    --text-color-main: #333333;  /* Texto principal */
-    --text-color-light: #ffffff; /* Texto sobre fondos oscuros */
+    /* Fondos y Superficies */
+    --bg-color: #f0f0f0;
+    --card-bg: #ffffff;
+    
+    /* Bordes y Detalles */
+    --border-light: #cccccc;
+    --border-xlight: #eeeeee;
+    --img-border: #dddddd; 
+    
+    /* Texto */
+    --text-main: #333333;
+    --text-white: #ffffff;
+    
+    /* Sombras */
+    --shadow-soft: rgba(0, 0, 0, 0.1);
+    --shadow-strong: rgba(0, 0, 0, 0.2);
 }
 
 /* --- 2. Estilos Base --- */
@@ -20,13 +32,13 @@ body {
     padding: 0;
     line-height: 1.6;
     background-color: var(--bg-color);
-    color: var(--text-color-main);
+    color: var(--text-main);
 }
 
-/* --- 3. Header y Navegación (Corrección de Contraste) --- */
+/* --- 3. Header y Navegación --- */
 header {
     background-color: var(--primary-color);
-    color: var(--text-color-light); /* Fuerza color blanco */
+    color: var(--text-white);
     text-align: center;
     padding: 20px 0;
 }
@@ -36,7 +48,7 @@ header {
     font-size: 1.6rem;
     font-weight: bold;
     margin-bottom: 15px;
-    color: var(--text-color-light); /* Asegura que el span sea blanco */
+    color: var(--text-white);
 }
 
 nav {
@@ -46,17 +58,18 @@ nav {
     padding: 0.5rem;
 }
 
-/* Selectores específicos para enlaces (evita el color negro por defecto) */
 nav a, 
-nav a:visited {
-    color: var(--text-color-light) !important; /* El !important asegura que Lighthouse no detecte otro color */
+nav a:link, 
+nav a:visited, 
+nav a:active {
+    color: var(--text-white) !important;
     text-decoration: none;
     padding: 10px 20px;
     transition: background-color 0.3s, color 0.3s;
 }
 
 nav a:hover {
-    background-color: #444444;
+    background-color: var(--nav-hover-bg);
     color: var(--accent-color) !important;
     border-radius: 5px;
 }
@@ -84,15 +97,15 @@ h1 {
 /* --- 5. Estilo de las Cards --- */
 .card {
     background-color: var(--card-bg);
-    border: 1px solid #cccccc;
+    border: 1px solid var(--border-light);
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px var(--shadow-soft);
 }
 
 .card h2 {
     background-color: var(--primary-color);
-    color: var(--text-color-light);
+    color: var(--text-white);
     margin: 0;
     padding: 15px;
     text-align: center;
@@ -110,13 +123,13 @@ h1 {
 .profile-img {
     width: 130px;
     height: auto;
-    border: 1px solid #dddddd;
+    border: 1px solid var(--img-border); /* Uso de variable */
     border-radius: 4px;
 }
 
 .location-section {
     padding: 0 15px 15px 15px;
-    border-top: 1px solid #eeeeee;
+    border-top: 1px solid var(--border-xlight);
 }
 
 .location-section h3 {
@@ -128,7 +141,7 @@ h1 {
 .flag-img {
     width: 100px;
     height: auto;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px var(--shadow-strong);
 }
 
 .resources-list {
@@ -151,7 +164,7 @@ h1 {
 /* --- 6. Footer --- */
 footer {
     background-color: var(--primary-color);
-    color: var(--text-color-light);
+    color: var(--text-white);
     text-align: center;
     padding: 2rem;
     margin-top: 40px;
