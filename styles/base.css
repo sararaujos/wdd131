@@ -1,0 +1,145 @@
+/* --- 1. Tipografía y Base --- */
+body {
+    font-family: 'Roboto', sans-serif; /* Usando Google Fonts */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f0f0f0; /* Fondo sutil para resaltar las cartas */
+    color: #333;
+}
+
+/* --- 2. Header y Navegación --- */
+header {
+    background-color: #1f4e79; /* Esquema de colores profesional */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+#course-title {
+    display: block; /* Requisito: display block para centrar fácilmente */
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+nav {
+    display: flex; /* Requisito: CSS Flex en el nav */
+    justify-content: space-around;
+    background-color: #333;
+    padding: 0.5rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s; /* Requisito: Hover effect */
+}
+
+nav a:hover {
+    background-color: #444;
+    color: #1abc9c;
+    border-radius: 5px;
+}
+
+/* --- 3. Layout Principal --- */
+main {
+    max-width: 900px; /* Requisito: Ancho limitado */
+    margin: 2rem auto; /* Requisito: Centrado horizontalmente */
+    padding: 0 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #1f4e79;
+}
+
+/* Requisito: Layout de columnas usando CSS Grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    align-items: start; /* Importante: Evita que las cartas se estiren a lo largo */
+}
+
+/* --- 4. Estilo de las Cards --- */
+.card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    background-color: #1f4e79;
+    color: white;
+    margin: 0;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Flexbox interno para alinear texto y fotos */
+.card-body, .location-data {
+    display: flex;
+    padding: 15px;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.profile-img {
+    width: 130px;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.location-section {
+    padding: 0 15px 15px 15px;
+    border-top: 1px solid #eee; /* Principio de Proximidad: separa secciones */
+}
+
+.location-section h4 {
+    margin: 15px 0 10px 0;
+    color: #1f4e79;
+}
+
+.flag-img {
+    width: 100px;
+    height: auto;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.resources-list {
+    padding: 20px 40px;
+}
+
+.resources-list li {
+    margin-bottom: 10px;
+}
+
+.resources-list a {
+    color: #1f4e79;
+    text-decoration: none;
+}
+
+.resources-list a:hover {
+    text-decoration: underline;
+}
+
+/* --- 5. Footer --- */
+footer {
+    background-color: #1f4e79;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 40px;
+}
+
+#lastModified {
+    color: #f1c40f; /* Contraste para que sea legible */
+    display: block;
+    margin-top: 10px;
+}
