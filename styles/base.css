@@ -1,10 +1,10 @@
 /* --- 1. Variables de Color (PALETA TIERRA Y VERDE) --- */
 :root {
     /* Paleta Principal */
-    --primary-color: #2d5a27;    /* Verde Bosque Profundo (Alto Contraste) */
-    --secondary-color: #3e2723;  /* Marrón Café Oscuro (Fondo de Nav) */
-    --accent-color: #81c784;     /* Verde Menta Claro (Hovers) */
-    --highlight-color: #ffcc80;  /* Naranja Arena Suave (Destaques) */
+    --primary-color: #2d5a27;    /* Verde Bosque Profundo */
+    --secondary-color: #3e2723;  /* Marrón Café Oscuro */
+    --accent-color: #81c784;     /* Verde Menta Claro */
+    --highlight-color: #ffcc80;  /* Naranja Arena Suave */
     --nav-hover-bg: #4e342e;     /* Marrón ligeramente más claro */
     
     /* Fondos y Superficies */
@@ -17,27 +17,21 @@
     --img-border: #a1887f;
     
     /* Texto */
-    --text-main: #212121;        /* Gris casi negro para lectura */
+    --text-main: #212121;        /* Gris casi negro */
     --text-white: #ffffff;       /* Blanco puro */
     
-    /* Sombras en Hexadecimal con Opacidad */
-    --shadow-soft: #3e27231a;    /* Sombra con tono marrón */
+    /* Sombras (Hexadecimal con Opacidad) */
+    --shadow-soft: #3e27231a;    
     --shadow-strong: #3e272333;
 }
 
-/* --- 2. Estilos Base y Reinicio de Contraste --- */
+/* --- 2. Estilos Base --- */
 * {
     box-sizing: border-box;
 }
 
-/* Evitamos que los enlaces hereden el negro (0,0,0) del navegador */
-a, a:link, a:visited {
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
 body {
-    font-family: 'Roboto', "sans-serif"; 
+    font-family: 'Roboto', sans-serif; 
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -45,7 +39,13 @@ body {
     color: var(--text-main);
 }
 
-/* --- 3. Header y Navegación (MÁXIMO CONTRASTE) --- */
+/* Enlaces generales */
+a, a:link, a:visited {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* --- 3. Header y Navegación --- */
 header {
     background-color: var(--primary-color);
     color: var(--text-white);
@@ -57,7 +57,7 @@ header {
 #course-title {
     display: block;
     font-size: 1.6rem;
-    font-weight: bold;
+    font-weight: 700;
     margin-bottom: 15px;
     color: var(--text-white);
 }
@@ -65,25 +65,24 @@ header {
 nav {
     display: flex;
     justify-content: space-around;
-    background-color: var(--accent-color); /* Marrón oscuro */
+    background-color: var(--accent-color); 
     padding: 0.5rem;
 }
 
-/* Blindaje contra el error de contraste: Blanco sobre Marrón Oscuro */
+/* CORRECCIÓN DE CONTRASTE (WCAG AA): 
+   Usamos texto oscuro sobre el fondo verde menta para que sea legible */
 nav a, 
 nav a:link, 
-nav a:visited,
-nav a:active,
-nav a:focus {
-    color: var(--nav-hover-bg) !important;
+nav a:visited {
+    color: var(--secondary-color); 
     padding: 10px 20px;
-    font-weight: 500;
+    font-weight: 700;
     transition: all 0.3s ease;
 }
 
 nav a:hover {
     background-color: var(--nav-hover-bg);
-    color: var(--accent-color) !important; /* Verde menta sobre marrón */
+    color: var(--accent-color); 
     border-radius: 5px;
 }
 
@@ -157,6 +156,7 @@ h1 {
     box-shadow: 0 2px 5px var(--shadow-strong);
 }
 
+/* Lista de Recursos */
 .resources-list {
     padding: 20px 40px;
 }
@@ -167,7 +167,7 @@ h1 {
 
 .resources-list a {
     color: var(--primary-color);
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .resources-list a:hover {
@@ -189,5 +189,5 @@ footer {
     color: var(--highlight-color);
     display: block;
     margin-top: 10px;
-    font-weight: bold;
+    font-weight: 700;
 }
