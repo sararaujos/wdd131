@@ -37,11 +37,12 @@ body {
 /* --- 3. Header y Navegación (CORRECCIÓN CRÍTICA) --- */
 header {
     background-color: var(--primary-color);
-    color: var(--text-white);
     text-align: center;
     padding: 20px 0;
     border-bottom: 4px solid var(--highlight-color);
 }
+
+.header{ color: var(--text-white);}
 
 #course-title {
     display: block;
