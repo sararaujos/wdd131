@@ -40,7 +40,12 @@ header {
     border-bottom: 4px solid var(--highlight-color);
 }
 
-.header{ color: var(--text-white);}
+/* Forzamos que cualquier texto directo o spans dentro del header sean blancos */
+header, 
+header span, 
+header #course-title {
+    color: var(--text-white);
+}
 
 #course-title {
     display: block;
