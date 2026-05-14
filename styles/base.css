@@ -35,7 +35,7 @@ body {
 
 /* --- 3. Header y Navegación (CORRECCIÓN CRÍTICA) --- */
 header {
-    
+    background-color: var(--primary-color);
     text-align: center;
     padding: 20px 0;
     border-bottom: 4px solid var(--highlight-color);
