@@ -30,7 +30,6 @@ body {
     padding: 0;
     line-height: 1.6;
     background-color: var(--bg-color);
-    color: var(--text-main);
 }
 
 /* --- 3. Header y Navegación (CORRECCIÓN CRÍTICA) --- */
@@ -56,6 +55,7 @@ nav {
     justify-content: space-around;
     background-color: var(--accent-color); 
     padding: 0.5rem;
+    color: var(--text-main);
 }
 
 /* ELIMINAR CONTRASTE BAJO: Forzamos el color oscuro en los enlaces del nav */
@@ -102,6 +102,7 @@ h1 {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 10px var(--shadow-soft);
+    color: var(--text-main);
 }
 
 .card h2 {
