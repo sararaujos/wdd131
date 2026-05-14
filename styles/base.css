@@ -31,7 +31,6 @@ body {
     padding: 0;
     line-height: 1.6;
     background-color: var(--bg-color);
-    color: var(--text-main);
 }
 
 /* --- 3. Header y Navegación (CORRECCIÓN CRÍTICA) --- */
