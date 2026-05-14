@@ -6,8 +6,7 @@
     --highlight-color: #ffcc80;  
     --nav-hover-bg: #4e342e;     
     
-    --bg-color: #fdfaf5;         
-    --card-bg: #ffffff;          
+    --bg-color: #fdfaf5;                   
     
     --border-light: #d7ccc8;     
     --border-xlight: #efebe9;
@@ -31,11 +30,12 @@ body {
     padding: 0;
     line-height: 1.6;
     background-color: var(--bg-color);
+    color: var(--text-main);
 }
 
 /* --- 3. Header y Navegación (CORRECCIÓN CRÍTICA) --- */
 header {
-    background-color: var(--primary-color);
+    
     text-align: center;
     padding: 20px 0;
     border-bottom: 4px solid var(--highlight-color);
@@ -62,7 +62,7 @@ nav {
 nav a, 
 nav a:link, 
 nav a:visited {
-    color: #3e2723 !important; /* Usamos el hex directo para asegurar que el validador lo lea */
+    color: var(--secondary-color) !important; /* Usamos el hex directo para asegurar que el validador lo lea */
     padding: 10px 20px;
     font-weight: 700;
     text-decoration: none;
@@ -97,7 +97,7 @@ h1 {
 
 /* --- 5. Estilo de las Cards --- */
 .card {
-    background-color: var(--card-bg);
+    background-color: var(--text-white);
     border: 1px solid var(--border-light);
     border-radius: 8px;
     overflow: hidden;
