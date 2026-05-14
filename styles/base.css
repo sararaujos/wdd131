@@ -50,7 +50,7 @@ header {
     color: var(--text-white);
 }
 
-nav {
+nav, .nav {
     display: flex;
     justify-content: space-around;
     background-color: var(--accent-color); 
@@ -61,7 +61,7 @@ nav {
 /* ELIMINAR CONTRASTE BAJO: Forzamos el color oscuro en los enlaces del nav */
 nav a, 
 nav a:link, 
-nav a:visited {
+nav a:visited, .nav {
     color: var(--secondary-color) !important; /* Usamos el hex directo para asegurar que el validador lo lea */
     padding: 10px 20px;
     font-weight: 700;
