@@ -1,0 +1,27 @@
+/* Ocultar el botón de menu porque ya hay espacio suficiente */
+#menu-btn {
+    display: none;
+}
+
+/* Volver a mostrar el menú de forma horizontal */
+nav {
+    display: flex !important; 
+    flex-direction: row;
+    position: static;
+    width: auto;
+    background: none;
+}
+
+nav a {
+    padding: 0.5rem 1rem;
+}
+
+/* Cambiar la galería a 3 columnas usando CSS Grid */
+.grid-container {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+nav a:hover {
+    background-color: #7c43bd; 
+    border-radius: 4px;        
+}

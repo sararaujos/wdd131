@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temple Album</title>
+    <meta name="description" content="Temple Album project by Sara Araujo. This page explores pictures of the LDS temple.">
+    <meta name="author" content="Sara Araujo">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles/temples.css">
+    <link rel="stylesheet" href="styles/temples-large.css" media="screen and (min-width: 640px)">
+    
+    <script src="scripts/temples.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Temple Album</h1>
+        <button id="menu-btn" aria-label="Toggle Menu">☰</button>
+        <nav id="nav-menu">
+            <a href="#" class="active">Home</a>
+            <a href="#">Old</a>
+            <a href="#">New</a>
+            <a href="#">Large</a>
+            <a href="#">Small</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Home</h2>
+        <div class="grid-container">
+            <figure>
+                <img src="images/lima_peru_los_olivos_temple_exterior.jpeg" alt=" Los Olivos Peru Temple" loading="lazy">
+                <figcaption>Los Olivos Peru Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/belem_brazil_temple_exterior.jpeg" alt="Belem Brazil Temple" loading="lazy">
+                <figcaption>Belem Brazil Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/madrid_spain_temple_lds.jpeg" alt="Madrid Spain Temple" loading="lazy">
+                <figcaption>Madrid Spain Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/madrid_spain_temple_lds.jpeg" alt="Madrid Spain Temple" loading="lazy">
+                <figcaption>Madrid Spain Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/lima_peru_los_olivos_temple_exterior.jpeg" alt=" Los Olivos Peru Temple" loading="lazy">
+                <figcaption>Los Olivos Peru Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/madrid_spain_temple_lds.jpeg" alt="Madrid Spain Temple" loading="lazy">
+                <figcaption>Madrid Spain Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/madrid_spain_temple_lds.jpeg" alt="Madrid Spain Temple" loading="lazy">
+                <figcaption>Madrid Spain Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/lima_peru_los_olivos_temple_exterior.jpeg" alt=" Los Olivos Peru Temple" loading="lazy">
+                <figcaption>Los Olivos Peru Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/belem_brazil_temple_exterior.jpeg" alt="Belem Brazil Temple" loading="lazy">
+                <figcaption>Belem Brazil Temple</figcaption>
+            </figure>
+        </div>
+    </main>
+
+    <footer>
+        <!-- El año y la fecha de modificación se llenan con JS -->
+        <p>&copy;<span id="currentyear"></span> 🌸 Sara Araujo 🌸 Peru</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
+    </footer>
+</body>
+</html>

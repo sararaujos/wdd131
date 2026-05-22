@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 | Temple Album | Sara Araujo</title>
+    <meta name="description" content="WDD 131 – Dynamic Web Fundamentals project by Sara Araujo. This page explores web development basics including CSS Grid, Flexbox, and JavaScript.">
+    <meta name="author" content="Sara Araujo">
+    
+    <!-- Google Fonts API -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles/temples-large.css">
+    <link rel="stylesheet" href="styles/temples.css">
+    
+    <!-- External JavaScript with defer -->
+    <script src="scripts/temples.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Temple Album</h1>
+        <button id="menu-btn" aria-label="Toggle Menu">☰</button>
+        <nav id="nav-menu">
+            <a href="#" class="active">Home</a>
+            <a href="#" target="_blank">Old</a>
+            <a href="#" target="_blank">New</a>
+            <a href="#" target="_blank">Large</a>
+            <a href="#" target="_blank">Small</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Home</h2>
+        <div class="grid-container">
+            <figure>
+                <img src="images/aba_nigeria_temple_lds.jpeg"alt="Nigeria Temple" loading="lazy">
+                <figcaption>Nigeria Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/belem_brazil_temple_exterior.jpeg" alt="Belem Brazil Temple" loading="lazy">
+                <figcaption>Belem Brazil Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/buenos_aires_argentina_temple.jpeg" alt="Buenos Aires Argentina Temple" loading="lazy">
+                <figcaption>Buenos Aires Argentina Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/freiberg_germany_temple_lds.jpeg" alt="Freiberg Germany Temple" loading="lazy">
+                <figcaption>Freiberg Germany Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/lima_peru_los_olivos_temple_exterior.jpeg" alt=" Los Olivos Peru Temple" loading="lazy">
+                <figcaption>Los Olivos Peru Temple</figcaption>
+            </figure>
+            <Figure>
+                <img src="images/madrid_spain_temple_lds.jpeg" alt="Madrid Spain Temple" loading="lazy">
+                <figcaption>Madrid Spain Temple</figcaption>
+            </Figure>
+            <figure>
+                <img src="images/philippines_cebu_temple.jpeg" alt="Cebu Phillippines Temple" loading="lazy">
+                <figcaption>Cebu Phillippines Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/rendering_arequipa_peru_temple.jpeg" alt="Arequipa Peru Temple" loading="lazy">
+                <figcaption>Arequipa Peru Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/trujillo_peru_temple_exterior.jpeg" alt="Trujillo Peru Temple" loading="lazy">
+                <figcaption>Trujillo Peru Temple</figcaption>
+            </figure>
+        </div>
+    </main>
+    <footer>
+        <!-- El año y la fecha de modificación se llenan con JS -->
+        <p>&copy;<span id="currentyear"></span> 🌸 Sara Araujo 🌸 Peru</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
