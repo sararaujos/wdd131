@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Czech Republic - Info Portal</title>
+    <meta name="description" content="Data and weather of the Czech Republic. WDD131 Assignment.">
+    <link rel="stylesheet" href="styles/place.css">
+    <script src="scripts/place.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>Czech Republic</h1>
+    </header>
+
+    <main>
+        <picture class="hero-container">
+            <source srcset="images/czech-large.webp" media="(min-width: 800px)">
+            <img src="images/czech-large.webp" alt="Beautiful Prague Bridges" class="hero-image" loading="lazy">
+        </picture>
+
+        <section class="card data-card">
+            <h2>Data</h2>
+            <ul>
+                <li><span class="label">Area:</span> <span class="value">78,871 sq km</span></li>
+                <li><span class="label">Population:</span> <span class="value">10.9 Million</span></li>
+                <li><span class="label">Capital:</span> <span class="value">Prague</span></li>
+                <li><span class="label">Languages:</span> <span class="value">Czech</span></li>
+                <li><span class="label">Currency:</span> <span class="value">Czech Koruna (CZK)</span></li>
+                <li><span class="label">Time Zone:</span> <span class="value">UTC+1 (CET)</span></li>
+                <li><span class="label">Calling Code:</span> <span class="value">+420</span></li>
+                <li><span class="label">Internet TLD:</span> <span class="value">.cz</span></li>
+            </ul>
+        </section>
+
+        <section class="card weather-card">
+            <h2>Weather</h2>
+            <div class="weather-icon-mobile">
+                <svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="32" cy="24" r="12" fill="#FFA500"/>
+                    <path d="M20 44 h24 a10 10 0 0 0 0 -20 a12 12 0 0 0 -23 4 a9 9 0 0 0 -1 16 z" fill="#B0C4DE"/>
+                </svg>
+            </div>
+            <ul>
+                <li><span class="label">Temperature:</span> <span class="value" id="temp">8</span> °C</li>
+                <li><span class="label">Conditions:</span> <span class="value">Partly Cloudy</span></li>
+                <li><span class="label">Wind:</span> <span class="value" id="wind">6</span> km/h</li>
+                <li><span class="label">Wind Chill:</span> <span class="value" id="windchill"></span></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> 🇨🇿 Rubia Magdelena Francesco 🇨🇿 Czech Republic</p>
+        <p class="last-modified">Last Modification: <span id="last-modified-date"></span></p>
+    </footer>
+
+</body>
+</html>

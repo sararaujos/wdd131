@@ -1,0 +1,165 @@
+/* Variables Globales con los colores de la bandera Checa */
+:root {
+    --primary-color: #11457e; /* Azul de la bandera */
+    --accent-color: #d7141a;   /* Rojo de la bandera */
+    --text-color: #222222;
+    --bg-light: #ffffff;
+    --bg-card-desktop: rgba(255, 255, 255, 0.9);
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Resets Básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: #f8f9fa;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: var(--primary-color);
+    border-bottom: 4px solid var(--accent-color);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+
+/* Layout por defecto (Mobile First) */
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+.hero-container {
+    width: 100%;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Estilos de las Tarjetas */
+.card {
+    background-color: var(--bg-light);
+    margin: 1.2rem;
+    padding: 1.5rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+    color: var(--primary-color);
+    text-align: center;
+    border-bottom: 2px solid #eaeaea;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.card ul {
+    list-style: none;
+}
+
+.card li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.label {
+    font-weight: 600;
+    color: #555;
+}
+
+.weather-icon-mobile {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    border-top: 4px solid var(--accent-color);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0.3rem 0;
+}
+
+/* --- Media Query para Vista de Escritorio (Wider View) --- */
+@media (min-width: 800px) {
+    main {
+        position: relative;
+        height: 550px;
+        display: block;
+    }
+
+    .hero-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Ubicación exacta según el Wireframe */
+    .card {
+        position: absolute;
+        z-index: 2;
+        background-color: var(--bg-card-desktop);
+        backdrop-filter: blur(4px);
+        width: 320px;
+        margin: 0;
+        border: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .data-card {
+        top: 30px;
+        left: 40px;
+    }
+
+    .weather-card {
+        bottom: 30px;
+        right: 40px;
+    }
+
+    .weather-icon-mobile {
+        display: none;
+    }
+
+    /* Requisito: Pseudo-elemento para agregar el emoticon en Desktop */
+    .weather-card h2::after {
+        content: " ⛅";
+        font-size: 1.4rem;
+        vertical-align: middle;
+    }
+}
