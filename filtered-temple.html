@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtered Temple Album</title>
+    <meta name="description" content="Filtered Temple Album project by Sara Araujo. Explore and filter various LDS temples dynamically.">
+    <meta name="author" content="Sara Araujo">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles/filtered-temples.css">
+    <link rel="stylesheet" href="styles/filtered-temples-large.css" media="screen and (min-width: 640px)">
+    
+    <script src="scripts/filtered-temples.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Temple Album</h1>
+        <button id="menu-btn" aria-label="Toggle Menu">☰</button>
+        <nav id="nav-menu">
+            <a href="#" id="home-nav" class="active">Home</a>
+            <a href="#" id="old-nav">Old</a>
+            <a href="#" id="new-nav">New</a>
+            <a href="#" id="large-nav">Large</a>
+            <a href="#" id="small-nav">Small</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2 id="filter-title">Home</h2>
+        <div class="grid-container" id="temple-cards-container"></div>
+    </main>
+
+    <footer>
+        <p>&copy;<span id="currentyear"></span> 🌸 Sara Araujo 🌸 Peru</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
+    </footer>
+</body>
+</html>
