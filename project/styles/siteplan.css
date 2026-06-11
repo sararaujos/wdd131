@@ -1,0 +1,121 @@
+/* Importación de tipografías modernas de Google */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap');
+
+:root {
+    --bg-yellow: #FFF2B2;   /* Amarillo Pastel Alegre */
+    --accent-blue: #BAE1FF;  /* Celeste Pastel */
+    --accent-pink: #FFC6FF;  /* Rosado Pastel */
+    --accent-green: #BFFCC6; /* Verde Menta Pastel */
+    --card-white: #FFFFFF;   /* Blanco para tarjetas */
+    --text-dark: #111111;    /* Negro para bordes e impacto visual */
+}
+
+body {
+    background-color: var(--bg-yellow);
+    color: var(--text-dark);
+    font-family: 'Inter', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 30px 15px;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: var(--accent-blue);
+    color: var(--text-dark);
+    padding: 35px;
+    text-align: center;
+    border: 3px solid var(--text-dark);
+    box-shadow: 6px 6px 0px var(--text-dark);
+    margin-bottom: 40px;
+    border-radius: 12px;
+}
+
+header h1 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    margin: 0;
+    font-size: 2.2rem;
+}
+
+header h2 {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    margin-top: 40px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+section {
+    background-color: var(--card-white);
+    padding: 25px;
+    margin-bottom: 30px;
+    border: 3px solid var(--text-dark);
+    box-shadow: 5px 5px 0px var(--text-dark);
+    border-radius: 12px;
+}
+
+/* Modificador especial para simular la sección de la calculadora */
+#site-purpose {
+    border-left: 10px solid var(--accent-pink);
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 12px;
+}
+
+/* Indicadores de Paleta de Colores en el Plan de Sitio */
+.color-box {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 10px;
+    border: 2px solid var(--text-dark);
+    border-radius: 6px;
+}
+
+.yellow-color { background-color: var(--bg-yellow); }
+.blue-color { background-color: var(--accent-blue); }
+.pink-color { background-color: var(--accent-pink); }
+.green-color { background-color: var(--accent-green); }
+.text-color { background-color: var(--text-dark); }
+
+/* Contenedores de Wireframes simulados */
+.wireframe-container {
+    background-color: var(--bg-yellow);
+    border: 3px dashed var(--text-dark);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+.wireframe-container h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    margin-top: 0;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-top: 60px;
+    padding: 25px;
+    border-top: 3px solid var(--text-dark);
+}
