@@ -1,6 +1,3 @@
-/* Importación de tipografías modernas de Google */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap');
-
 :root {
     --bg-yellow: #FFF2B2;   /* Amarillo Pastel Alegre */
     --accent-blue: #BAE1FF;  /* Celeste Pastel */
@@ -66,7 +63,6 @@ section {
     border-radius: 12px;
 }
 
-/* Modificador especial para simular la sección de la calculadora */
 #site-purpose {
     border-left: 10px solid var(--accent-pink);
 }
