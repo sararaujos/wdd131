@@ -1,8 +1,8 @@
 :root {
     --turquoise-dark: #005a60;     /* Turquesa oscuro para cabeceras, pie de página y botones */
-    --turquoise-light: #e6f7f8;    /* Turquesa claro y limpio para el fondo del contenedor principal */
-    --text-color: #112223;         /* Texto casi negro con un ligero matiz turquesa */
-    --border-color: #8ec3c7;       /* Borde intermedio para los campos del formulario */
+    --turquoise-light: #e6f7f8;    /* Turquesa claro para el fondo del contenedor principal */
+    --text-color: #112223;         
+    --border-color: #8ec3c7;       
     --white: #ffffff;
 }
 
@@ -78,7 +78,7 @@ input:focus, select:focus, textarea:focus {
     outline: 2px solid var(--turquoise-dark);
 }
 
-/* Distribución de las estrellas de valoración */
+/* Estrellas */
 .radio-group {
     display: flex;
     gap: 15px;
@@ -95,10 +95,10 @@ input:focus, select:focus, textarea:focus {
 .stars {
     font-size: 1.2rem;
     margin-bottom: 4px;
-    color: var(--turquoise-dark); /* Estrellas en turquesa oscuro */
+    color: var(--turquoise-dark);
 }
 
-/* Distribución de Checkboxes */
+/* Checkboxes */
 .checkbox-group {
     display: flex;
     flex-direction: column;
@@ -116,7 +116,7 @@ input:focus, select:focus, textarea:focus {
 
 input[type="checkbox"], input[type="radio"] {
     transform: scale(1.2);
-    accent-color: var(--turquoise-dark); /* Color de marcado en turquesa oscuro */
+    accent-color: var(--turquoise-dark);
 }
 
 /* Botón Post Review */
@@ -138,7 +138,7 @@ input[type="checkbox"], input[type="radio"] {
     color: var(--white);
 }
 
-/* Estilos del Footer */
+/* Footer */
 footer {
     background-color: var(--turquoise-dark);
     color: var(--white);

@@ -9,7 +9,7 @@ const products = [
 document.addEventListener("DOMContentLoaded", () => {
     const productSelect = document.getElementById("product-name");
 
-    // Rellenar dinámicamente el dropdown de productos
+    // Rellenar las opciones del select dinámicamente
     products.forEach(product => {
         const option = document.createElement("option");
         option.value = product.id; 
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         productSelect.appendChild(option);
     });
 
-    // Inyectar la fecha y hora actual en el footer de forma dinámica
+    // Cargar la fecha y hora de modificación dinámica en el formulario
     const lastModElement = document.getElementById("last-mod");
     const currentDateTime = new Date().toLocaleString();
     lastModElement.textContent = currentDateTime;
