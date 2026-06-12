@@ -15,12 +15,17 @@
         <h1>Thank You!</h1>
     </header>
 
-    <main style="text-align: center;">
+    <main class="review-confirmation">
         <h2>Review Submitted Successfully</h2>
         <p>We appreciate your feedback helping us improve our products.</p>
-        <div style="border-top: 1px solid var(--border-color); margin: 20px 0;"></div>
+        
+        <hr class="divider">
+        
         <p>Total reviews submitted from this browser: <strong id="counter-display">0</strong></p>
-        <p style="margin-top: 30px;"><a href="form.html" style="color: var(--turquoise-dark); font-weight: bold;">Submit Another Review</a></p>
+        
+        <p class="return-link-container">
+            <a href="form.html" class="back-link">Return to the Product Review Form Page</a>
+        </p>
     </main>
 
     <footer>
@@ -31,16 +36,18 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            // Lógica del contador de LocalStorage
+            // Manejo seguro del contador en LocalStorage
             let reviewCount = parseInt(localStorage.getItem("reviewCount")) || 0;
             reviewCount++;
             localStorage.setItem("reviewCount", reviewCount);
             document.getElementById("counter-display").textContent = reviewCount;
 
-            // Fecha dinámica para el pie de página
+            // Inyección de la fecha y hora de modificación dinámica requerida
             const lastModElement = document.getElementById("last-mod");
-            const currentDateTime = new Date().toLocaleString();
-            lastModElement.textContent = currentDateTime;
+            if (lastModElement) {
+                const currentDateTime = new Date().toLocaleString();
+                lastModElement.textContent = currentDateTime;
+            }
         });
     </script>
 </body>

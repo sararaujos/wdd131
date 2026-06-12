@@ -9,7 +9,7 @@ const products = [
 document.addEventListener("DOMContentLoaded", () => {
     const productSelect = document.getElementById("product-name");
 
-    // Rellenar las opciones del select dinámicamente
+    // Mantener la primera opción por defecto requerida y añadir el resto
     products.forEach(product => {
         const option = document.createElement("option");
         option.value = product.id; 
@@ -17,8 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
         productSelect.appendChild(option);
     });
 
-    // Cargar la fecha y hora de modificación dinámica en el formulario
+    // Cargar fecha y hora de modificación de forma dinámica
     const lastModElement = document.getElementById("last-mod");
-    const currentDateTime = new Date().toLocaleString();
-    lastModElement.textContent = currentDateTime;
+    if (lastModElement) {
+        const currentDateTime = new Date().toLocaleString();
+        lastModElement.textContent = currentDateTime;
+    }
 });
