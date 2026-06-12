@@ -36,13 +36,13 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            // Manejo seguro del contador en LocalStorage
+            // LocalStorage Counter logic
             let reviewCount = parseInt(localStorage.getItem("reviewCount")) || 0;
             reviewCount++;
             localStorage.setItem("reviewCount", reviewCount);
             document.getElementById("counter-display").textContent = reviewCount;
 
-            // Inyección de la fecha y hora de modificación dinámica requerida
+            // Footer dynamic timestamp
             const lastModElement = document.getElementById("last-mod");
             if (lastModElement) {
                 const currentDateTime = new Date().toLocaleString();

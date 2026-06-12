@@ -19,17 +19,15 @@
     <main>
         <form action="review.html" method="get">
             
-            <!-- Product Name Dropdown -->
             <div class="form-group">
-                <label for="product-name">Product Name</label>
+                <label for="product-name">Product Name <span class="required-asterisk">*</span></label>
                 <select id="product-name" name="productName" required>
                     <option value="" disabled selected>Select a Product ...</option>
                 </select>
             </div>
 
-            <!-- Overall Rating Radio Buttons -->
             <div class="form-group">
-                <span class="label-heading">Overall Rating</span>
+                <span class="label-heading">Overall Rating <span class="required-asterisk">*</span></span>
                 <div class="radio-group">
                     <div class="radio-item">
                         <label for="rating-1" class="radio-label"><span class="stars">&star;</span></label>
@@ -54,13 +52,11 @@
                 </div>
             </div>
 
-            <!-- Date of Installation -->
             <div class="form-group">
-                <label for="installation-date">Date of Installation</label>
+                <label for="installation-date">Date of Installation <span class="required-asterisk">*</span></label>
                 <input type="date" id="installation-date" name="installationDate" required>
             </div>
 
-            <!-- Useful Features Checkboxes -->
             <div class="form-group">
                 <span class="label-heading">Which features did you find useful in the product? <br><small>(Check all that apply)</small></span>
                 <div class="checkbox-group">
@@ -83,19 +79,16 @@
                 </div>
             </div>
 
-            <!-- Written Review (Optional) -->
             <div class="form-group">
                 <label for="written-review">Written Review <small>(Optional)</small></label>
                 <textarea id="written-review" name="writtenReview" rows="5"></textarea>
             </div>
 
-            <!-- User Name (Optional) -->
             <div class="form-group">
                 <label for="user-name">Your Name <small>(Optional)</small></label>
                 <input type="text" id="user-name" name="userName">
             </div>
 
-            <!-- Submit Button -->
             <input type="submit" value="Post Review" class="submit-btn">
         </form>
     </main>
