@@ -1,0 +1,151 @@
+:root {
+    --turquoise-dark: #005a60;     /* Turquesa oscuro para cabeceras, pie de página y botones */
+    --turquoise-light: #e6f7f8;    /* Turquesa claro y limpio para el fondo del contenedor principal */
+    --text-color: #112223;         /* Texto casi negro con un ligero matiz turquesa */
+    --border-color: #8ec3c7;       /* Borde intermedio para los campos del formulario */
+    --white: #ffffff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--white);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background-color: var(--turquoise-dark);
+    color: var(--white);
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+main {
+    background-color: var(--turquoise-light);
+    width: 100%;
+    max-width: 500px;
+    padding: 25px;
+    box-sizing: border-box;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin: 30px 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+label, .label-heading {
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+small {
+    font-weight: normal;
+    color: #4a5a5c;
+}
+
+input[type="text"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    background-color: var(--white);
+    color: var(--text-color);
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: 2px solid var(--turquoise-dark);
+}
+
+/* Distribución de las estrellas de valoración */
+.radio-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.radio-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.stars {
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+    color: var(--turquoise-dark); /* Estrellas en turquesa oscuro */
+}
+
+/* Distribución de Checkboxes */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.checkbox-group label {
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    transform: scale(1.2);
+    accent-color: var(--turquoise-dark); /* Color de marcado en turquesa oscuro */
+}
+
+/* Botón Post Review */
+.submit-btn {
+    background-color: var(--white);
+    color: var(--turquoise-dark);
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 12px;
+    border: 2px solid var(--turquoise-dark);
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+.submit-btn:hover {
+    background-color: var(--turquoise-dark);
+    color: var(--white);
+}
+
+/* Estilos del Footer */
+footer {
+    background-color: var(--turquoise-dark);
+    color: var(--white);
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-top: auto;
+}
