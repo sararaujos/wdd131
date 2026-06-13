@@ -4,26 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Mission | TinyTreasure</title>
+    <meta name="author" content="Sara Araujo">
+    <meta name="description" content="Browse our TinyTreasure's mission and commitment to circular fashion.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/project.css">
 </head>
 <body>
     <header class="main-header">
         <div class="logo">🧸 TinyTreasure</div>
+        <button id="menu-toggle" aria-label="Toggle navigation">☰</button>
         <nav id="main-nav">
             <a href="index.html">Home</a>
             <a href="catalog.html">Shop Catalog</a>
             <a href="about.html" class="active">Our Mission</a>
         </nav>
     </header>
+
     <main>
         <section class="info-card">
-            <h2>Why TinyTreasure?</h2>
-            <p>We believe that childhood is a time for adventure, not for waste. Our mission is to make sustainable parenting trendy, accessible, and budget-friendly.</p>
+            <h1>Our Mission: Circular Fashion</h1>
+            <p>At <strong>TinyTreasure</strong>, we believe childhood is a time for endless adventure, not for waste.</p>
+        </section>
+
+        <section class="mission-grid" style="display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+            <article class="info-card">
+                <h3>Why TinyTreasure?</h3>
+                <p>We bridge the gap between style and sustainability. Our marketplace is a curated space where premium pre-loved items get a second chance.</p>
+            </article>
+
+            <article class="info-card">
+                <h3>Our Commitment</h3>
+                <p>Choosing pre-loved isn't just saving money, it's reducing your water footprint and carbon emissions for a greener future.</p>
+            </article>
+
+            <article class="info-card">
+                <h3>Quality Trust</h3>
+                <p>Every piece is hand-selected to meet our high standards, ensuring garments that are as beautiful as they are sustainable.</p>
+            </article>
+        </section>
+
+        <section class="info-card">
+            <h3>Our Philosophy</h3>
+            <p>We are proud to be at the forefront of the circular economy in the Czech Republic, helping families make conscious choices without compromising on quality.</p>
         </section>
     </main>
+
     <footer class="main-footer">
-        <p>&copy; <span id="year"></span> TinyTreasure | <a href="siteplan.html">Site Plan</a></p>
+        <p>&copy; <span id="year"></span> TinyTreasure | Sara Araujo | Czech Republic</p>
+        <p>Last Modified: <span id="lastModified"></span></p>
+        <p><a href="references.html" class="ref-link">Project References Page</a></p>
     </footer>
+
     <script src="scripts/main.js"></script>
 </body>
 </html>
