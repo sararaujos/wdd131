@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TinyTreasure | Pre-Loved Clothing</title>
+    <meta name="description" content="Curated pre-loved clothing for babies and toddlers up to 5 years old. Save money and protect the planet.">
+    <meta name="author" content="Sara Araujo">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/project.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">🧸 TinyTreasure</div>
+        <button id="menu-toggle" aria-label="Toggle navigation">☰</button>
+        <nav id="main-nav">
+            <a href="index.html" class="active">Home</a>
+            <a href="catalog.html">Shop Catalog</a>
+            <a href="siteplan.html">Site Plan</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-banner">
+            <h1>Eco-Friendly Fashion for Little Explorers</h1>
+            <p>Kids grow fast. Their carbon footprints shouldn't. Explore premium curated clothing for ages 0 to 5.</p>
+            <a href="catalog.html" class="btn-main">Shop the Drops</a>
+        </section>
+
+        <section class="calculator-box">
+            <h2>🌱 Sustainability Impact Calculator</h2>
+            <p>See how much water and CO₂ emissions you save by choosing pre-loved clothes instead of new fast fashion!</p>
+            
+            <form id="calc-form" onsubmit="return false;">
+                <div class="form-group">
+                    <label for="item-type">Select Clothing Type:</label>
+                    <select id="item-type">
+                        <option value="onesie">Baby Onesie / Bodysuit</option>
+                        <option value="jeans">Toddler Denim Jeans</option>
+                        <option value="jacket">Winter Coat / Jacket</option>
+                        <option value="tshirt">Cotton T-Shirt</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="item-quantity">Quantity:</label>
+                    <input type="number" id="item-quantity" min="1" max="20" value="1" required>
+                </div>
+                <button type="button" id="btn-calculate" class="btn-accent">Calculate Impact</button>
+            </form>
+
+            <div id="calc-results" class="results-dashboard hidden">
+                <h3>Your Environmental Savings:</h3>
+                <p id="water-saved">💧 Water Saved: 0 Liters</p>
+                <p id="co2-saved">☁️ CO₂ Avoided: 0 kg</p>
+                <div class="badge-box" id="badge-container"></div>
+            </div>
+        </section>
+
+        <section class="info-card" id="visit-counter-section">
+            <p id="total-savings-counter">Loading your household savings history...</p>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; <span id="year"></span> TinyTreasure | Sara Araujo | Czech Republic</p>
+        <p>Last Modified: <span id="lastModified"></span></p>
+        <p><a href="references.html" class="ref-link">Project References Page</a></p>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/shop.js"></script>
+</body>
+</html>

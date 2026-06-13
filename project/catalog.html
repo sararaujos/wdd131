@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Catalog | TinyTreasure</title>
+    <meta name="description" content="Browse our curated catalog of sustainable, high-quality clothes for babies and toddlers.">
+    <meta name="author" content="Sara Araujo">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/project.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">🧸 TinyTreasure</div>
+        <button id="menu-toggle" aria-label="Toggle navigation">☰</button>
+        <nav id="main-nav">
+            <a href="index.html">Home</a>
+            <a href="catalog.html" class="active">Shop Catalog</a>
+            <a href="siteplan.html">Site Plan</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="catalog-header">
+            <h2>Curated Drops</h2>
+            <p>Filter by age group to find the perfect pre-loved items for your little one.</p>
+            
+            <div class="filter-buttons">
+                <button class="btn-filter active" data-filter="all">All Items</button>
+                <button class="btn-filter" data-filter="0-12m">0-12 Months</button>
+                <button class="btn-filter" data-filter="1-2y">1-2 Years</button>
+                <button class="btn-filter" data-filter="3-5y">3-5 Years</button>
+            </div>
+        </section>
+
+        <section id="product-grid" class="product-grid">
+            </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; <span id="year"></span> TinyTreasure | Sara Araujo | Czech Republic</p>
+        <p>Last Modified: <span id="lastModified"></span></p>
+        <p><a href="references.html" class="ref-link">Project References Page</a></p>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/shop.js"></script>
+</body>
+</html>

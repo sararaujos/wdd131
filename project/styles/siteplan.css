@@ -63,9 +63,7 @@ section {
     border-radius: 12px;
 }
 
-#site-purpose {
-    border-left: 10px solid var(--accent-pink);
-}
+
 
 ul {
     padding-left: 20px;
