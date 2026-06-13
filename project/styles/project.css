@@ -32,7 +32,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 30px;
+    padding: 10px 30px;
     border: 3px solid var(--text-dark);
     box-shadow: 5px 5px 0px var(--text-dark);
     margin: 20px auto 0 auto;
@@ -45,6 +45,21 @@ main {
     font-weight: 800;
     font-size: 1.4rem;
     text-transform: uppercase;
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Esto controla qué tan cerca está el texto del logo */
+    text-decoration: none;
+    color: var(--text-dark);
+}
+
+.site-logo {
+    width: 60px; /* Ajusta este valor según prefieras el tamaño */
+    height: auto;
+    border: 2px solid var(--text-dark); /* Para mantener el estilo neubrutalista */
+    border-radius: 8px;
+    background-color: var(--card-white);
 }
 
 #main-nav {
